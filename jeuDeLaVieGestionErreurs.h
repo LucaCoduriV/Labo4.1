@@ -16,9 +16,11 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 #define LABO4_1_JEUDELAVIEGESTIONERREURS_H
 
 /**
+ * Vérifie que le nombre d'espaces entre les colonnes soit nul ou positif
  *
- * @param ESPACE_COLONNES
- * @return
+ * @param ESPACE_COLONNES : nombre d'espaces à afficher entre chaque colonne de la
+ * grille
+ * @return un booléen : true si la condition est respectée, false autrement
  */
 bool verifierEspacesColonnes(const int ESPACE_COLONNES);
 
