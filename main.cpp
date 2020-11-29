@@ -1,7 +1,7 @@
 /*
  -----------------------------------------------------------------------------------
 Nom du fichier : main.cpp
-Auteur(s)      : Luca Coduri
+Auteur(s)      : Chloé Fontaine & Tania Nunez & Luca Coduri
 Date creation  : 27.11.2020
 Description    : <à compléter>
 Remarque(s)    : <à compléter>
@@ -14,7 +14,7 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 
 using namespace std;
 
-const char celluleOccupee = 'B';
+const char celluleOccupee = 'X';
 const char celluleVide = '.';
 
 int main() {

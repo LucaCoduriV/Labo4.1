@@ -1,6 +1,13 @@
-//
-// Created by lucac on 29.11.2020.
-//
+/*
+ -----------------------------------------------------------------------------------
+Nom du fichier : jeuDeLaVieAffichage.cpp
+Auteur(s)      : Chloé Fontaine & Tania Nunez & Luca Coduri
+Date creation  : 27.11.2020
+Description    : <à compléter>
+Remarque(s)    : <à compléter>
+Compilateur    : Mingw-w64 g++ 8.1.0
+ -----------------------------------------------------------------------------------
+ */
 
 #include "jeuDeLaVieAffichage.h"
 #include <iostream>

@@ -1,6 +1,13 @@
-//
-// Created by lucac on 26.11.2020.
-//
+/*
+-----------------------------------------------------------------------------------
+Nom du fichier  : jeuDeLaVieCalculs.h
+Auteur(s)       : Chloé Fontaine & Tania Nunez & Luca Coduri
+Date creation   : 27.11.2020
+Description     : <à compléter>
+Remarque(s)     : <à compléter>
+Compilateur     : Mingw-w64 g++ 8.1.0
+-----------------------------------------------------------------------------------
+*/
 
 #ifndef LABO4_JEUDELAVIE_H
 #define LABO4_JEUDELAVIE_H
@@ -27,11 +34,11 @@ bool etatSuivantCellule(char etatActuel, int nbVivant);
 Grille calculeGenSuivante(const Grille& genActu);
 /**
  *
- * @param grille1
+ * @param tableau
  * @param ligne
  * @param colonne
  * @return
  */
-unsigned occurences(Grille grille1, size_t ligne, size_t colonne);
+unsigned nbCellulesVoisinesOccupees(Grille tableau, size_t ligne, size_t colonne);
 
 #endif //LABO4_JEUDELAVIE_H
