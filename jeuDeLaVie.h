@@ -9,10 +9,12 @@
 const int COLONNES = 11;
 const int LIGNES = 10;
 
-using grille = std::array<std::array<bool, COLONNES>, LIGNES>;
+using Ligne = std::array<bool, COLONNES>;
+using Grille = std::array<Ligne, LIGNES>;
 
-void afficher(grille tableau);
+void afficher(Grille tableau);
 bool etatSuivantCellule(char etatActuel, int nbVivant);
-grille calculeGenSuivante(const grille& genActu);
-unsigned occurences(grille grille1, size_t ligne, size_t colonne);
+Grille calculeGenSuivante(const Grille& genActu);
+unsigned occurences(Grille grille1, size_t ligne, size_t colonne);
+void jeuDeLaVie(Grille schemaBase, unsigned nbGeneration);
 #endif //LABO4_JEUDELAVIE_H

@@ -17,7 +17,7 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 using namespace std;
 
 int main() {
-   grille grille1({});
+   Grille grille1({});
    grille1.at(0) = {0,0,0,0,0,0,0,0,0,0};
    grille1.at(1) = {0,0,0,0,0,0,0,0,0,0};
    grille1.at(2) = {0,0,0,0,0,0,0,0,0,0};
@@ -32,12 +32,7 @@ int main() {
 
 
 
-   while(true){
-      sleep(1);
-      cout << "\n\n\n\n\n\n\n";
-      afficher(grille1);
-      grille1 = calculeGenSuivante(grille1);
-   }
+   jeuDeLaVie(grille1, 10);
 
    return EXIT_SUCCESS;
 }

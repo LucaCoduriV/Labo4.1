@@ -15,10 +15,17 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 #include <iomanip>
 #include "jeuDeLaVie.h"
 using namespace std;
-using grille = std::array<std::array<bool, COLONNES>, LIGNES>;
-void afficher(grille tableau){
-   for (auto ligne : tableau) {
-      for (char col : ligne) {
+
+void jeuDeLaVie(Grille schemaBase, unsigned nbGeneration){
+   for (unsigned i = 0; i < nbGeneration; ++i) {
+      afficher(schemaBase);
+      schemaBase = calculeGenSuivante(schemaBase);
+   }
+}
+
+void afficher(Grille tableau){
+   for (Ligne ligne : tableau) {
+      for (bool col : ligne) {
          if (col) {
             cout << setw(3) << "X";
          }
@@ -32,9 +39,9 @@ bool etatSuivantCellule(bool etatActuel, unsigned nbVivant){
    || nbVivant == 2));
 }
 
-grille calculeGenSuivante(const grille& genActu){
+Grille calculeGenSuivante(const Grille& genActu){
 
-   grille genSuiv{};
+   Grille genSuiv{};
 
    for(size_t i = 0; i < genActu.size(); i++ ){
       for(size_t j = 0; j < genActu.at(i).size(); j++ ){
@@ -49,7 +56,7 @@ grille calculeGenSuivante(const grille& genActu){
    return genSuiv;
 }
 
-unsigned occurences(grille tableau, size_t ligne, size_t colonne ) {
+unsigned occurences(Grille tableau, size_t ligne, size_t colonne ) {
    unsigned occ = 0;
    unsigned ligneFin = tableau.size() - 1;
    unsigned colonneFin = tableau[0].size() - 1;
