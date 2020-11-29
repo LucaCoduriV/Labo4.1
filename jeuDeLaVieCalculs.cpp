@@ -13,27 +13,12 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 #include <iostream>
 #include <array>
 #include <iomanip>
-#include "jeuDeLaVie.h"
+#include "jeuDeLaVieCalculs.h"
 using namespace std;
 
-void jeuDeLaVie(Grille schemaBase, unsigned nbGeneration){
-   for (unsigned i = 0; i < nbGeneration; ++i) {
-      afficher(schemaBase);
-      schemaBase = calculeGenSuivante(schemaBase);
-   }
-}
 
-void afficher(Grille tableau){
-   for (Ligne ligne : tableau) {
-      for (bool col : ligne) {
-         if (col) {
-            cout << setw(3) << "X";
-         }
-         else { cout << setw(3) << "."; }
-      }
-      cout << endl;
-   }
-}
+
+
 bool etatSuivantCellule(bool etatActuel, unsigned nbVivant){
    return (not etatActuel && nbVivant == 3) || (etatActuel && (nbVivant == 3
    || nbVivant == 2));

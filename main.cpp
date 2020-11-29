@@ -11,7 +11,7 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 #include <cstdlib>
 #include <iostream>
 #include <array>
-#include "jeuDeLaVie.h"
+#include "jeuDeLaVieAffichage.h"
 #include <unistd.h>
 
 using namespace std;
@@ -29,10 +29,14 @@ int main() {
    grille1.at(8) = {0,0,0,0,0,0,0,0,0,0};
    grille1.at(9) = {0,0,0,0,0,0,0,0,0,0};
 
+//   grille1.at(4).at(4) = true;
+//   grille1.at(4).at(5) = true;
+//   grille1.at(4).at(6) = true;
+//   grille1.at(5).at(5) = true;
 
 
 
-   jeuDeLaVie(grille1, 10);
+   CommencerJeuDeLaVie(grille1, 10);
 
    return EXIT_SUCCESS;
 }
