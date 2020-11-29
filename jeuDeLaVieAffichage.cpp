@@ -19,10 +19,10 @@ void CommencerJeuDeLaVie(Grille schemaBase, unsigned nbGeneration){
 void afficherUneGeneration(Grille tableau){
    for (Ligne ligne : tableau) {
       for (bool col : ligne) {
-         if (col) {
-            cout << setw(3) << "X";
-         }
-         else { cout << setw(3) << "."; }
+         if (col)
+            cout << setw(3) << celluleOccupee;
+         else
+            cout << setw(3) << celluleVide;
       }
       cout << endl;
    }

@@ -4,6 +4,9 @@
 #define LABO4_1_JEUDELAVIEAFFICHAGE_H
 #include "jeuDeLaVieCalculs.h"
 
+extern const char celluleOccupee;
+extern const char celluleVide;
+
 /**
  *
  * @param tableau
