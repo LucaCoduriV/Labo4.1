@@ -3,8 +3,11 @@
 Nom du fichier : jeuDeLaVieCalculs.cpp
 Auteur(s)      : Chloé Fontaine & Tania Nunez & Luca Coduri
 Date creation  : 27.11.2020
+
 Description    : <à compléter>
+
 Remarque(s)    : <à compléter>
+
 Compilateur    : Mingw-w64 g++ 8.1.0
  -----------------------------------------------------------------------------------
  */
@@ -15,14 +18,12 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 
 using namespace std;
 
-
-bool etatCelluleGenSuivante(bool etatActuel, unsigned nbVivant) {
-   return (not etatActuel && nbVivant == 3) || (etatActuel && (nbVivant == 3
-                                                               || nbVivant == 2));
+bool etatCelluleGenSuivante(bool etatActuel, unsigned nbOccurences) {
+   return (not etatActuel && nbOccurences == 3) ||
+          (etatActuel && (nbOccurences == 3 || nbOccurences == 2));
 }
 
 Grille calculeGenSuivante(const Grille &genActu) {
-
    Grille genSuiv{};
 
    for (size_t i = 0; i < genActu.size(); i++) {
