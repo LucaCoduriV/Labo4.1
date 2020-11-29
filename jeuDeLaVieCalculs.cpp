@@ -46,8 +46,9 @@ unsigned nbCellulesVoisinesOccupees(Grille tableau, size_t ligne, size_t colonne
    unsigned ligneFin = tableau.size() - 1;
    unsigned colonneFin = tableau[0].size() - 1;
 
-   // Calcule de nombre d'occurences dans le cas ou la cellule se trouve dans un
-   // des bords de la grille
+   // Calcule le nombre d'occurences dans le cas où la cellule se trouve dans un
+   // des bords de la grille puis (dans le else) dans le cas où la cellule se
+   // trouve dans le centre de la grille
    if(ligne == 0){
       if(colonne == 0){
          occ = tableau[0][1] + tableau[1][0] + tableau[1][1];
