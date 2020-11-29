@@ -4,9 +4,10 @@ Nom du fichier : jeuDeLaVieCalculs.cpp
 Auteur(s)      : Chloé Fontaine & Tania Nunez & Luca Coduri
 Date creation  : 27.11.2020
 
-Description    : <à compléter>
+Description    : Ce fichier contient l'implémentation des prototypes des fonctions
+                 déclarées dans le fichier jeuDeLaVieCalculs.h.
 
-Remarque(s)    : <à compléter>
+Remarque(s)    :
 
 Compilateur    : Mingw-w64 g++ 8.1.0
  -----------------------------------------------------------------------------------
@@ -45,6 +46,8 @@ unsigned nbCellulesVoisinesOccupees(Grille tableau, size_t ligne, size_t colonne
    unsigned ligneFin = tableau.size() - 1;
    unsigned colonneFin = tableau[0].size() - 1;
 
+   // Calcule de nombre d'occurences dans le cas ou la cellule se trouve dans un
+   // des bords de la grille
    if(ligne == 0){
       if(colonne == 0){
          occurence = tableau[0][1] + tableau[1][0] + tableau[1][1];
@@ -61,26 +64,26 @@ unsigned nbCellulesVoisinesOccupees(Grille tableau, size_t ligne, size_t colonne
          occurence = tableau[ligneFin - 1][0] + tableau[ligneFin - 1][1]
                      + tableau[ligneFin][1];
       }else if(colonne == colonneFin){
-         occurence = tableau[ligneFin - 1][colonneFin - 1] + tableau[ligneFin - 1][colonneFin]
-                     + tableau[ligneFin][colonneFin - 1];
+         occurence = tableau[ligneFin - 1][colonneFin - 1] +
+            tableau[ligneFin - 1][colonneFin] + tableau[ligneFin][colonneFin - 1];
       }else{
-         occurence = tableau[ligneFin - 1][colonne - 1] + tableau[ligneFin - 1][colonne]
-                     + tableau[ligneFin][colonne + 1] + tableau[ligneFin][colonne - 1]
-                     + tableau[ligneFin][colonne + 1];
+         occurence = tableau[ligneFin - 1][colonne - 1] +
+            tableau[ligneFin - 1][colonne] + tableau[ligneFin][colonne + 1] +
+            tableau[ligneFin][colonne - 1] + tableau[ligneFin][colonne + 1];
       }
    }else{
       if(colonne == 0){
-         occurence = tableau[ligne - 1][0] + tableau[ligne - 1][1] + tableau[ligne][1]
-                     + tableau[ligne + 1][0] + tableau[ligne + 1][1];
+         occurence = tableau[ligne - 1][0] + tableau[ligne - 1][1] +
+            tableau[ligne][1] + tableau[ligne + 1][0] + tableau[ligne + 1][1];
       }else if(colonne == colonneFin){
-         occurence = tableau[ligne - 1][colonneFin - 1] + tableau[ligne - 1][colonneFin]
-                     + tableau[ligne][colonneFin - 1] + tableau[ligne + 1][colonneFin]
-                     + tableau[ligne + 1][ligneFin + 1];
+         occurence = tableau[ligne - 1][colonneFin - 1] +
+            tableau[ligne - 1][colonneFin] + tableau[ligne][colonneFin - 1] +
+            tableau[ligne + 1][colonneFin] + tableau[ligne + 1][ligneFin + 1];
       }else{
          occurence = tableau[ligne - 1][colonne - 1] + tableau[ligne - 1][colonne]
-                     + tableau[ligne][colonne - 1] + tableau[ligne][colonne + 1]
-                     + tableau[ligne + 1][colonne - 1] + tableau[ligne + 1][colonne]
-                     + tableau[ligne + 1][colonne + 1] + tableau[ligne - 1][colonne + 1];
+            + tableau[ligne][colonne - 1] + tableau[ligne][colonne + 1]
+            + tableau[ligne + 1][colonne - 1] + tableau[ligne + 1][colonne]
+            + tableau[ligne + 1][colonne + 1] + tableau[ligne - 1][colonne + 1];
       }
    }
    return (unsigned)occurence;

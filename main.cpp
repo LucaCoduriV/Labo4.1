@@ -64,6 +64,5 @@ int main() {
  * Question complémentaire : Que peut-on observer dans les résultats obtenus ?
  *
  * Pour la configuration initiale du Tétramino, nous pouvons observer un résultat
- * cyclique à partir de la 11ème génération, alternant entre une sorte de croix et
- * une sorte de cercle.
+ * cyclique à partir de la 11ème génération, alternant entre une croix et  un cercle.
  */
