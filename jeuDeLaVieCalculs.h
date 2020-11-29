@@ -4,7 +4,9 @@ Nom du fichier  : jeuDeLaVieCalculs.h
 Auteur(s)       : Chloé Fontaine & Tania Nunez & Luca Coduri
 Date creation   : 27.11.2020
 
-Description     : <à compléter>
+Description     : Ce fichier contient les fonctions nécessaires aux calculs
+                  de la prochaine génération. Ces fonctions sont implémentées dans
+                  le fichier jeuDeLaVieCalculs.cpp.
 
 Remarque(s)     : Une grille de type Grille est un tableau de type array de 2
                   dimensions.

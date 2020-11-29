@@ -3,8 +3,12 @@
 Nom du fichier : jeuDeLaVieCalculs.cpp
 Auteur(s)      : Chloé Fontaine & Tania Nunez & Luca Coduri
 Date creation  : 27.11.2020
-Description    : <à compléter>
-Remarque(s)    : <à compléter>
+
+Description    : Ce fichier contient l'implémentation des prototypes des fonctions
+                 déclarées dans le fichier jeuDeLaVieCalculs.h.
+
+Remarque(s)    :
+
 Compilateur    : Mingw-w64 g++ 8.1.0
  -----------------------------------------------------------------------------------
  */
@@ -15,14 +19,12 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 
 using namespace std;
 
-
-bool etatCelluleGenSuivante(bool etatActuel, unsigned nbVivant) {
-   return (not etatActuel && nbVivant == 3) || (etatActuel && (nbVivant == 3
-                                                               || nbVivant == 2));
+bool etatCelluleGenSuivante(bool etatActuel, unsigned nbOccurences) {
+   return (!etatActuel && nbOccurences == 3) ||
+          (etatActuel && (nbOccurences == 3 || nbOccurences == 2));
 }
 
 Grille calculeGenSuivante(const Grille &genActu) {
-
    Grille genSuiv{};
 
    for (size_t i = 0; i < genActu.size(); i++) {
@@ -44,6 +46,8 @@ unsigned nbCellulesVoisinesOccupees(Grille tableau, size_t ligne, size_t colonne
    unsigned ligneFin = tableau.size() - 1;
    unsigned colonneFin = tableau[0].size() - 1;
 
+   // Calcule de nombre d'occurences dans le cas ou la cellule se trouve dans un
+   // des bords de la grille
    if(ligne == 0){
       if(colonne == 0){
          occ = tableau[0][1] + tableau[1][0] + tableau[1][1];
