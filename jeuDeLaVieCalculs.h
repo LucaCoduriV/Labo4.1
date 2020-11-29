@@ -17,8 +17,8 @@ Compilateur     : Mingw-w64 g++ 8.1.0
 #define LABO4_JEUDELAVIE_H
 #include <array>
 
-extern const size_t COLONNES = 11;
-extern const size_t LIGNES = 10;
+const size_t COLONNES = 11;
+const size_t LIGNES = 10;
 
 using Ligne = std::array<bool, COLONNES>;
 using Grille = std::array<Ligne, LIGNES>;

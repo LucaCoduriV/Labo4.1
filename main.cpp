@@ -38,22 +38,22 @@ const int ESPACE_COLONNES = 3;
 
 int main() {
    Grille grille1({});
-//   grille1.at(0) = {0,0,0,0,0,0,0,0,0,0};
-//   grille1.at(1) = {0,0,0,0,0,0,0,0,0,0};
-//   grille1.at(2) = {0,0,0,0,0,0,0,0,0,0};
-//   grille1.at(3) = {0,0,0,0,0,0,0,0,0,0};
-//   grille1.at(4) = {0,0,0,0,1,1,1,0,0,0};
-//   grille1.at(5) = {0,0,0,0,0,1,0,0,0,0};
-//   grille1.at(6) = {0,0,0,0,0,0,0,0,0,0};
-//   grille1.at(7) = {0,0,0,0,0,0,0,0,0,0};
-//   grille1.at(8) = {0,0,0,0,0,0,0,0,0,0};
-//   grille1.at(9) = {0,0,0,0,0,0,0,0,0,0};
+   grille1.at(0) = {0,0,0,0,0,0,0,0,0,0, 0};
+   grille1.at(1) = {0,0,0,0,0,0,0,0,0,0, 0};
+   grille1.at(2) = {0,0,0,0,0,0,0,0,0,0, 0};
+   grille1.at(3) = {0,0,0,0,0,0,0,0,0,0, 0};
+   grille1.at(4) = {0,0,0,0,0,0,0,0,0,0, 0};
+   grille1.at(5) = {0,0,0,0,0,0,0,0,0,0, 0};
+   grille1.at(6) = {0,0,0,0,0,0,0,0,0,0, 0};
+   grille1.at(7) = {0,0,0,0,0,0,0,0,0,0, 0};
+   grille1.at(8) = {1,1,1,0,0,0,0,0,0,0, 0};
+   grille1.at(9) = {0,1,0,0,0,0,0,0,0,0, 0};
 
-   // Configuration initiale
-   grille1.at(4).at(4) = true;
-   grille1.at(4).at(5) = true;
-   grille1.at(4).at(6) = true;
-   grille1.at(5).at(5) = true;
+//   // Configuration initiale
+//   grille1.at(4).at(4) = true;
+//   grille1.at(4).at(5) = true;
+//   grille1.at(4).at(6) = true;
+//   grille1.at(5).at(5) = true;
 
    commencerJeuDeLaVie(grille1, 14);
 
