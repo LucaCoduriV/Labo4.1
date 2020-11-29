@@ -12,16 +12,32 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 #include <iostream>
 #include <array>
 #include "jeuDeLaVie.h"
+#include <unistd.h>
 
 using namespace std;
 
 int main() {
-   array<array<char, COLONNES>, LIGNES> tableau;
+   grille grille1({});
+   grille1.at(0) = {0,0,0,0,0,0,0,0,0,0};
+   grille1.at(1) = {0,0,0,0,0,0,0,0,0,0};
+   grille1.at(2) = {0,0,0,0,0,0,0,0,0,0};
+   grille1.at(3) = {0,0,0,0,0,0,0,0,0,0};
+   grille1.at(4) = {0,0,0,0,1,1,1,0,0,0};
+   grille1.at(5) = {0,0,0,0,0,1,0,0,0,0};
+   grille1.at(6) = {0,0,0,0,0,0,0,0,0,0};
+   grille1.at(7) = {0,0,0,0,0,0,0,0,0,0};
+   grille1.at(8) = {0,0,0,0,0,0,0,0,0,0};
+   grille1.at(9) = {0,0,0,0,0,0,0,0,0,0};
 
-   for (int i = 0; i < tableau.size(); i++) {
-      tableau[i].fill('.');
+
+
+
+   while(true){
+      sleep(1);
+      cout << "\n\n\n\n\n\n\n";
+      afficher(grille1);
+      grille1 = calculeGenSuivante(grille1);
    }
-   calculeGenSuivante(tableau);
-   afficher(tableau);
+
    return EXIT_SUCCESS;
 }

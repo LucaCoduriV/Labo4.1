@@ -27,7 +27,7 @@ void afficher(grille tableau){
       cout << endl;
    }
 }
-bool etatSuivantCellule(bool etatActuel, int nbVivant){
+bool etatSuivantCellule(bool etatActuel, unsigned nbVivant){
    return (not etatActuel && nbVivant == 3) || (etatActuel && (nbVivant == 3
    || nbVivant == 2));
 }
@@ -38,17 +38,18 @@ grille calculeGenSuivante(const grille& genActu){
 
    for(size_t i = 0; i < genActu.size(); i++ ){
       for(size_t j = 0; j < genActu.at(i).size(); j++ ){
-         if(etatSuivantCellule(genActu.at(i).at(j), 2) ){
-            genSuiv.at(i).at(j) = 1;
+         if(etatSuivantCellule(genActu.at(i).at(j), occurences(genActu, i,j)) ){
+            genSuiv.at(i).at(j) = true;
+
          }else{
-            genSuiv.at(i).at(j) = 0;
+            genSuiv.at(i).at(j) = false;
          }
       }
    }
    return genSuiv;
 }
 
-unsigned occurences(unsigned ligne, unsigned colonne, grille tableau) {
+unsigned occurences(grille tableau, size_t ligne, size_t colonne ) {
    unsigned occ = 0;
    unsigned ligneFin = tableau.size() - 1;
    unsigned colonneFin = tableau[0].size() - 1;
@@ -90,6 +91,6 @@ unsigned occurences(unsigned ligne, unsigned colonne, grille tableau) {
       occ = tableau[ligne - 1][colonne - 1] + tableau[ligne - 1][colonne]
             + tableau[ligne][colonne - 1] + tableau[ligne][colonne + 1]
             + tableau[ligne + 1][colonne - 1] + tableau[ligne + 1][colonne]
-            + tableau[ligne + 1][colonne + 1];
+            + tableau[ligne + 1][colonne + 1] + tableau[ligne - 1][colonne + 1];
    }
 }

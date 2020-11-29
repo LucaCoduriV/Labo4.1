@@ -11,8 +11,8 @@ const int LIGNES = 10;
 
 using grille = std::array<std::array<bool, COLONNES>, LIGNES>;
 
-void afficher(std::array<std::array<char, COLONNES>, LIGNES> tableau);
+void afficher(grille tableau);
 bool etatSuivantCellule(char etatActuel, int nbVivant);
 grille calculeGenSuivante(const grille& genActu);
-unsigned occurences(unsigned ligne, unsigned colonne);
+unsigned occurences(grille grille1, size_t ligne, size_t colonne);
 #endif //LABO4_JEUDELAVIE_H
