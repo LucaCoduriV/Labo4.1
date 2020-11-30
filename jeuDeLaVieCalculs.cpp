@@ -28,7 +28,7 @@ bool etatCelluleGenSuivante(bool etatActuel, unsigned nbOccurences) {
 
 Grille calculeGenSuivante(const Grille &genActu) {
    assert(verifierTailleGrille(genActu.size(), genActu.at(0).size()));
-   Grille genSuiv(genActu.size(), Ligne(genActu.at(0).size()));
+   Grille genSuiv(genActu.size(),Ligne(genActu.at(0).size()));
 
    for (size_t i = 0; i < genActu.size(); i++) {
       for (size_t j = 0; j < genActu.at(i).size(); j++) {
@@ -72,31 +72,33 @@ colonne) {
       }
    } else if (ligne == ligneFin) {
       if (colonne == 0) {
-         occ = grille[ligneFin - 1][0] + grille[ligneFin - 1][1]
-               + grille[ligneFin][1];
+         occ = grille.at(ligneFin - 1).at(0) + grille.at(ligneFin - 1).at(1)
+                + grille.at(ligneFin).at(1);
       } else if (colonne == colonneFin) {
-         occ = grille[ligneFin - 1][colonneFin - 1]
-               + grille[ligneFin - 1][colonneFin]
-               + grille[ligneFin][colonneFin - 1];
+         occ = grille.at(ligneFin - 1).at(colonneFin - 1)
+                + grille.at(ligneFin - 1).at(colonneFin)
+                + grille.at(ligneFin).at(colonneFin - 1);
       } else {
-         occ = grille[ligneFin - 1][colonne - 1] + grille[ligneFin - 1][colonne]
-               + grille[ligneFin - 1][colonne + 1] + grille[ligneFin][colonne - 1]
-               + grille[ligneFin][colonne + 1];
+         occ = grille.at(ligneFin - 1).at(colonne - 1)
+                + grille.at(ligneFin - 1).at(colonne)
+                + grille.at(ligneFin - 1).at(colonne + 1)
+                + grille.at(ligneFin).at(colonne - 1)
+                + grille.at(ligneFin).at(colonne + 1);
       }
    } else {
       if (colonne == 0) {
          occ = grille[ligne - 1][0] + grille[ligne - 1][1] + grille[ligne][1]
-               + grille[ligne + 1][0] + grille[ligne + 1][1];
+                + grille[ligne + 1][0] + grille[ligne + 1][1];
       } else if (colonne == colonneFin) {
          occ = grille[ligne - 1][colonneFin - 1] + grille[ligne - 1][colonneFin]
-               + grille[ligne][colonneFin - 1] + grille[ligne + 1][colonneFin - 1]
-               + grille[ligne + 1][colonneFin];
+                + grille[ligne][colonneFin - 1] + grille[ligne + 1][colonneFin - 1]
+                + grille[ligne + 1][colonneFin];
       } else {
          occ = grille[ligne - 1][colonne - 1] + grille[ligne - 1][colonne]
-               + grille[ligne][colonne - 1] + grille[ligne][colonne + 1]
-               + grille[ligne + 1][colonne - 1] + grille[ligne + 1][colonne]
-               + grille[ligne + 1][colonne + 1] + grille[ligne - 1][colonne + 1];
+                + grille[ligne][colonne - 1] + grille[ligne][colonne + 1]
+                + grille[ligne + 1][colonne - 1] + grille[ligne + 1][colonne]
+                + grille[ligne + 1][colonne + 1] + grille[ligne - 1][colonne + 1];
       }
    }
-   return (unsigned) occ;
+   return (unsigned)occ;
 }
