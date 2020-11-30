@@ -23,22 +23,22 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 
 extern const char CELLULE_OCCUPEE;
 extern const char CELLULE_VIDE;
-extern const int ESPACE_COLONNES;
+extern const unsigned ESPACE_COLONNES;
 
 /**
  * Fonction de départ du jeu de la vie
  *
- * @param schemaBase : grille de booléens de la génération 1
+ * @param grilleBase : grille de booléens de la génération 1
  * @param nbGeneration : nombre de générations pour lesquelles on veut afficher la
  * configuration
  */
-void commencerJeuDeLaVie(Grille schemaBase, unsigned nbGeneration);
+void commencerJeuDeLaVie(Grille grilleBase, unsigned nbGeneration);
 
 /**
  * Affiche la configuration d'une grille de bool
  *
- * @param tableau : grille de booléens
+ * @param grille : grille de booléens
  */
-void afficherUneGeneration(const Grille& tableau);
+void afficherUneGeneration(const Grille& grille);
 
 #endif //LABO4_1_JEUDELAVIEAFFICHAGE_H

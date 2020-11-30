@@ -45,11 +45,11 @@ Grille calculeGenSuivante(const Grille& genActu);
  * Calcule le nombres de cellules voisines occupées de la cellule entrée en
  * paramètre
  *
- * @param tableau : grille de booléens
+ * @param grille : grille de booléens
  * @param ligne : ligne de l'emplacement de la cellule
  * @param colonne : colonne de l'emplacement de la cellule
  * @return le nombre de cellules voisines occupées
  */
-unsigned nbCellulesVoisinesOccupees(Grille tableau, size_t ligne, size_t colonne);
+unsigned nbCellulesVoisinesOccupees(const Grille &grille, size_t ligne, size_t colonne);
 
 #endif //LABO4_JEUDELAVIE_H

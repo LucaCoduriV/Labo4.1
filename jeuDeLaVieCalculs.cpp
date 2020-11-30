@@ -24,8 +24,8 @@ bool etatCelluleGenSuivante(bool etatActuel, unsigned nbOccurences) {
           (etatActuel && (nbOccurences == 3 || nbOccurences == 2));
 }
 
-Grille calculeGenSuivante(Grille genActu) {
-   Grille genSuiv(genActu);
+Grille calculeGenSuivante(const Grille &genActu) {
+   Grille genSuiv(genActu.size(),Ligne(genActu.at(0).size()));
 
    for (size_t i = 0; i < genActu.size(); i++) {
       for (size_t j = 0; j < genActu.at(i).size(); j++) {
@@ -41,50 +41,52 @@ Grille calculeGenSuivante(Grille genActu) {
    return genSuiv;
 }
 
-unsigned nbCellulesVoisinesOccupees(Grille tableau, size_t ligne, size_t colonne) {
-   int occ = 0;
-   size_t ligneFin = tableau.size() - 1;
-   size_t colonneFin = tableau[0].size() - 1;
+unsigned nbCellulesVoisinesOccupees(const Grille &grille, size_t ligne, size_t
+colonne) {
+   int occ;
+   size_t ligneFin = grille.size() - 1;
+   size_t colonneFin = grille[0].size() - 1;
 
    // Calcule le nombre d'occurences dans le cas où la cellule se trouve dans un
    // des bords de la grille puis (dans le else) dans le cas où la cellule se
    // trouve dans le centre de la grille
-   if(ligne == 0){
-      if(colonne == 0){
-         occ = tableau[0][1] + tableau[1][0] + tableau[1][1];
-      }else if(colonne == colonneFin){
-         occ = tableau[0][colonneFin - 1] + tableau[1][colonneFin - 1]
-               + tableau[1][colonneFin];
-      }else{
-         occ = tableau[0][colonne - 1] + tableau[0][colonne + 1]
-               + tableau[1][colonne - 1] + tableau[1][colonne]
-               + tableau[1][colonne + 1];
+   if (ligne == 0) {
+      if (colonne == 0) {
+         occ = grille[0][1] + grille[1][0] + grille[1][1];
+      } else if (colonne == colonneFin) {
+         occ = grille[0][colonneFin - 1] + grille[1][colonneFin - 1]
+                + grille[1][colonneFin];
+      } else {
+         occ = grille[0][colonne - 1] + grille[0][colonne + 1]
+                + grille[1][colonne - 1] + grille[1][colonne]
+                + grille[1][colonne + 1];
       }
-   }else if(ligne == ligneFin){
-      if(colonne == 0){
-         occ = tableau[ligneFin - 1][0] + tableau[ligneFin - 1][1]
-               + tableau[ligneFin][1];
-      }else if(colonne == colonneFin){
-         occ = tableau[ligneFin - 1][colonneFin - 1] + tableau[ligneFin - 1][colonneFin]
-               + tableau[ligneFin][colonneFin - 1];
-      }else{
-         occ = tableau[ligneFin - 1][colonne - 1] + tableau[ligneFin - 1][colonne]
-               + tableau[ligneFin - 1][colonne + 1]
-               + tableau[ligneFin][colonne - 1] + tableau[ligneFin][colonne + 1];
+   } else if (ligne == ligneFin) {
+      if (colonne == 0) {
+         occ = grille[ligneFin - 1][0] + grille[ligneFin - 1][1]
+                + grille[ligneFin][1];
+      } else if (colonne == colonneFin) {
+         occ = grille[ligneFin - 1][colonneFin - 1]
+                + grille[ligneFin - 1][colonneFin]
+                + grille[ligneFin][colonneFin - 1];
+      } else {
+         occ = grille[ligneFin - 1][colonne - 1] + grille[ligneFin - 1][colonne]
+                + grille[ligneFin - 1][colonne + 1] + grille[ligneFin][colonne - 1]
+                + grille[ligneFin][colonne + 1];
       }
-   }else{
-      if(colonne == 0){
-         occ = tableau[ligne - 1][0] + tableau[ligne - 1][1] + tableau[ligne][1]
-               + tableau[ligne + 1][0] + tableau[ligne + 1][1];
-      }else if(colonne == colonneFin){
-         occ = tableau[ligne - 1][colonneFin - 1] + tableau[ligne - 1][colonneFin]
-               + tableau[ligne][colonneFin - 1] + tableau[ligne + 1][colonneFin - 1]
-               + tableau[ligne + 1][colonneFin];
-      }else{
-         occ = tableau[ligne - 1][colonne - 1] + tableau[ligne - 1][colonne]
-               + tableau[ligne][colonne - 1] + tableau[ligne][colonne + 1]
-               + tableau[ligne + 1][colonne - 1] + tableau[ligne + 1][colonne]
-               + tableau[ligne + 1][colonne + 1] + tableau[ligne - 1][colonne + 1];
+   } else {
+      if (colonne == 0) {
+         occ = grille[ligne - 1][0] + grille[ligne - 1][1] + grille[ligne][1]
+                + grille[ligne + 1][0] + grille[ligne + 1][1];
+      } else if (colonne == colonneFin) {
+         occ = grille[ligne - 1][colonneFin - 1] + grille[ligne - 1][colonneFin]
+                + grille[ligne][colonneFin - 1] + grille[ligne + 1][colonneFin - 1]
+                + grille[ligne + 1][colonneFin];
+      } else {
+         occ = grille[ligne - 1][colonne - 1] + grille[ligne - 1][colonne]
+                + grille[ligne][colonne - 1] + grille[ligne][colonne + 1]
+                + grille[ligne + 1][colonne - 1] + grille[ligne + 1][colonne]
+                + grille[ligne + 1][colonne + 1] + grille[ligne - 1][colonne + 1];
       }
    }
    return (unsigned)occ;

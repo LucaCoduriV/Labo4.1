@@ -22,18 +22,18 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 
 using namespace std;
 
-void commencerJeuDeLaVie(Grille schemaBase, unsigned nbGeneration){
+void commencerJeuDeLaVie(Grille grilleBase, unsigned nbGeneration){
    for (unsigned i = 0; i < nbGeneration; ++i) {
       cout << endl << "Generation " << i + 1 << " :" << endl;
-      afficherUneGeneration(schemaBase);
-      schemaBase = calculeGenSuivante(schemaBase);
+      afficherUneGeneration(grilleBase);
+      grilleBase = calculeGenSuivante(grilleBase);
    }
 }
 
-void afficherUneGeneration(const Grille& tableau){
+void afficherUneGeneration(const Grille& grille){
    assert(verifierEspacesColonnes(ESPACE_COLONNES));
-   for (Ligne ligne : tableau) {
-      for (bool col : ligne) {
+   for (const Ligne& ligne : grille) {
+      for (const bool& col : ligne) {
          if (col)
             cout << setw(ESPACE_COLONNES) << CELLULE_OCCUPEE;
          else
