@@ -23,7 +23,7 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 
 extern const char CELLULE_OCCUPEE;
 extern const char CELLULE_VIDE;
-extern const unsigned ESPACE_COLONNES;
+extern const int ESPACE_COLONNES;
 
 /**
  * Fonction de départ du jeu de la vie
@@ -41,4 +41,4 @@ void commencerJeuDeLaVie(Grille grilleBase, unsigned nbGeneration);
  */
 void afficherUneGeneration(const Grille& grille);
 
-#endif //LABO4_1_JEUDELAVIEAFFICHAGE_H
+#endif

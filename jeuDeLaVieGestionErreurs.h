@@ -22,6 +22,13 @@ Compilateur    : Mingw-w64 g++ 8.1.0
  * grille
  * @return un booléen : true si la condition est respectée, false autrement
  */
-bool verifierEspacesColonnes(const int ESPACE_COLONNES);
+bool verifierEspacesColonnes(int espaceColonnes);
+/**
+ *
+ * @param COLONNES
+ * @param LIGNES
+ * @return
+ */
+bool verifierTailleGrille(size_t COLONNES, size_t LIGNES);
 
-#endif //LABO4_1_JEUDELAVIEGESTIONERREURS_H
+#endif

@@ -15,7 +15,9 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 
 #include <cstdlib>
 #include <iostream>
+#include <cassert>
 #include "jeuDeLaVieCalculs.h"
+#include "jeuDeLaVieGestionErreurs.h"
 
 using namespace std;
 
@@ -25,6 +27,7 @@ bool etatCelluleGenSuivante(bool etatActuel, unsigned nbOccurences) {
 }
 
 Grille calculeGenSuivante(const Grille &genActu) {
+   assert(verifierTailleGrille(genActu.size(), genActu.at(0).size()));
    Grille genSuiv(genActu.size(),Ligne(genActu.at(0).size()));
 
    for (size_t i = 0; i < genActu.size(); i++) {
@@ -43,9 +46,10 @@ Grille calculeGenSuivante(const Grille &genActu) {
 
 unsigned nbCellulesVoisinesOccupees(const Grille &grille, size_t ligne, size_t
 colonne) {
+   assert(verifierTailleGrille(grille.size(), grille.at(0).size()));
    int occ;
    size_t ligneFin = grille.size() - 1;
-   size_t colonneFin = grille[0].size() - 1;
+   size_t colonneFin = grille.at(0).size() - 1;
 
    // Calcule le nombre d'occurences dans le cas où la cellule se trouve dans un
    // des bords de la grille puis (dans le else) dans le cas où la cellule se

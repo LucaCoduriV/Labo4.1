@@ -26,14 +26,13 @@ Compilateur    : Mingw-w64 g++ 8.1.0
  -----------------------------------------------------------------------------------
  */
 #include <cstdlib>
-#include <iostream>
 #include "jeuDeLaVieAffichage.h"
 
 using namespace std;
 
 const char CELLULE_OCCUPEE = 'X';
 const char CELLULE_VIDE = '.';
-const unsigned ESPACE_COLONNES = 3;
+const int ESPACE_COLONNES = 3;
 const size_t COLONNES = 11;
 const size_t LIGNES = 10;
 const unsigned NB_GENERATION = 20;

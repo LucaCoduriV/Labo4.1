@@ -13,9 +13,12 @@ Compilateur    : Mingw-w64 g++ 8.1.0
  */
 
 #include <cstdlib>
-#include <iostream>
 #include "jeuDeLaVieGestionErreurs.h"
 
-bool verifierEspacesColonnes(const int ESPACE_COLONNES) {
-   return ESPACE_COLONNES >= 0;
+bool verifierEspacesColonnes(int espaceColonnes) {
+   return espaceColonnes >= 0;
+}
+
+bool verifierTailleGrille(size_t colonnes, size_t lignes){
+   return colonnes != 0 && lignes != 0;
 }
