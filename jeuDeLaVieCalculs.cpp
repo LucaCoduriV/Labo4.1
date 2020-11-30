@@ -21,9 +21,9 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 
 using namespace std;
 
-bool etatCelluleGenSuivante(bool etatActuel, unsigned nbOccurences) {
-   return (!etatActuel && nbOccurences == 3) ||
-          (etatActuel && (nbOccurences == 3 || nbOccurences == 2));
+bool etatCelluleGenSuivante(bool etatActuel, unsigned nbOccurrences) {
+   return (!etatActuel && nbOccurrences == 3) ||
+          (etatActuel && (nbOccurrences == 3 || nbOccurrences == 2));
 }
 
 Grille calculeGenSuivante(const Grille &genActu) {
@@ -50,7 +50,7 @@ colonne) {
    size_t ligneFin = grille.size() - 1;
    size_t colonneFin = grille.at(0).size() - 1;
 
-   // Calcule le nombre d'occurences dans le cas où la cellule se trouve dans un
+   // Calcule le nombre d'occurrences dans le cas où la cellule se trouve dans un
    // des bords de la grille puis (dans le else) dans le cas où la cellule se
    // trouve dans le centre de la grille
    int occ;
