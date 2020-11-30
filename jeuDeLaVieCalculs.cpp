@@ -80,17 +80,26 @@ colonne) {
       }
    } else {
       if (colonne == 0) {
-         occ = grille[ligne - 1][0] + grille[ligne - 1][1] + grille[ligne][1]
-                + grille[ligne + 1][0] + grille[ligne + 1][1];
+         occ = grille.at(ligne - 1).at(0)
+               + grille.at(ligne - 1).at(1)
+               + grille.at(ligne).at(1)
+               + grille.at(ligne + 1).at(0)
+               + grille.at(ligne + 1).at(1);
       } else if (colonne == colonneFin) {
-         occ = grille[ligne - 1][colonneFin - 1] + grille[ligne - 1][colonneFin]
-                + grille[ligne][colonneFin - 1] + grille[ligne + 1][colonneFin - 1]
-                + grille[ligne + 1][colonneFin];
+         occ = grille.at(ligne - 1).at(colonneFin - 1)
+               + grille.at(ligne - 1).at(colonneFin)
+               + grille.at(ligne).at(colonneFin - 1)
+               + grille.at(ligne + 1).at(colonneFin - 1)
+               + grille.at(ligne + 1).at(colonneFin);
       } else {
-         occ = grille[ligne - 1][colonne - 1] + grille[ligne - 1][colonne]
-                + grille[ligne][colonne - 1] + grille[ligne][colonne + 1]
-                + grille[ligne + 1][colonne - 1] + grille[ligne + 1][colonne]
-                + grille[ligne + 1][colonne + 1] + grille[ligne - 1][colonne + 1];
+         occ = grille.at(ligne - 1).at(colonne - 1)
+               + grille.at(ligne - 1).at(colonne)
+               + grille.at(ligne).at(colonne - 1)
+               + grille.at(ligne).at(colonne + 1)
+               + grille.at(ligne + 1).at(colonne - 1)
+               + grille.at(ligne + 1).at(colonne)
+               + grille.at(ligne + 1).at(colonne + 1)
+               + grille.at(ligne - 1).at(colonne + 1);
       }
    }
    return (unsigned)occ;
