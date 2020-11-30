@@ -56,27 +56,34 @@ colonne) {
    // trouve dans le centre de la grille
    if (ligne == 0) {
       if (colonne == 0) {
-         occ = grille[0][1] + grille[1][0] + grille[1][1];
+         occ = grille.at(0).at(1)
+            + grille.at(1).at(0)
+            + grille.at(1).at(1);
       } else if (colonne == colonneFin) {
-         occ = grille[0][colonneFin - 1] + grille[1][colonneFin - 1]
-                + grille[1][colonneFin];
+         occ = grille.at(0).at(colonneFin - 1)
+               + grille.at(1).at(colonneFin - 1)
+               + grille.at(1).at(colonneFin);
       } else {
-         occ = grille[0][colonne - 1] + grille[0][colonne + 1]
-                + grille[1][colonne - 1] + grille[1][colonne]
-                + grille[1][colonne + 1];
+         occ = grille.at(0).at(colonne - 1)
+               + grille.at(0).at(colonne + 1)
+               + grille.at(1).at(colonne - 1)
+               + grille.at(1).at(colonne)
+               + grille.at(1).at(colonne + 1);
       }
    } else if (ligne == ligneFin) {
       if (colonne == 0) {
-         occ = grille[ligneFin - 1][0] + grille[ligneFin - 1][1]
-                + grille[ligneFin][1];
+         occ = grille.at(ligneFin - 1).at(0) + grille.at(ligneFin - 1).at(1)
+                + grille.at(ligneFin).at(1);
       } else if (colonne == colonneFin) {
-         occ = grille[ligneFin - 1][colonneFin - 1]
-                + grille[ligneFin - 1][colonneFin]
-                + grille[ligneFin][colonneFin - 1];
+         occ = grille.at(ligneFin - 1).at(colonneFin - 1)
+                + grille.at(ligneFin - 1).at(colonneFin)
+                + grille.at(ligneFin).at(colonneFin - 1);
       } else {
-         occ = grille[ligneFin - 1][colonne - 1] + grille[ligneFin - 1][colonne]
-                + grille[ligneFin - 1][colonne + 1] + grille[ligneFin][colonne - 1]
-                + grille[ligneFin][colonne + 1];
+         occ = grille.at(ligneFin - 1).at(colonne - 1)
+                + grille.at(ligneFin - 1).at(colonne)
+                + grille.at(ligneFin - 1).at(colonne + 1)
+                + grille.at(ligneFin).at(colonne - 1)
+                + grille.at(ligneFin).at(colonne + 1);
       }
    } else {
       if (colonne == 0) {
