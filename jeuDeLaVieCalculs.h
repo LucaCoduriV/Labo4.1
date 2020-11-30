@@ -17,13 +17,10 @@ Compilateur     : Mingw-w64 g++ 8.1.0
 
 #ifndef LABO4_JEUDELAVIE_H
 #define LABO4_JEUDELAVIE_H
-#include <array>
+#include <vector>
 
-const size_t COLONNES = 11;
-const size_t LIGNES = 10;
-
-using Ligne = std::array<bool, COLONNES>;
-using Grille = std::array<Ligne, LIGNES>;
+using Ligne = std::vector<bool>;
+using Grille = std::vector<Ligne>;
 
 /**
  * Calcule l'état de la cellule à la prochaine génération en fonction de l'état

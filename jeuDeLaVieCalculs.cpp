@@ -24,8 +24,8 @@ bool etatCelluleGenSuivante(bool etatActuel, unsigned nbOccurences) {
           (etatActuel && (nbOccurences == 3 || nbOccurences == 2));
 }
 
-Grille calculeGenSuivante(const Grille &genActu) {
-   Grille genSuiv{};
+Grille calculeGenSuivante(Grille genActu) {
+   Grille genSuiv(genActu);
 
    for (size_t i = 0; i < genActu.size(); i++) {
       for (size_t j = 0; j < genActu.at(i).size(); j++) {
@@ -43,8 +43,8 @@ Grille calculeGenSuivante(const Grille &genActu) {
 
 unsigned nbCellulesVoisinesOccupees(Grille tableau, size_t ligne, size_t colonne) {
    int occ = 0;
-   unsigned ligneFin = tableau.size() - 1;
-   unsigned colonneFin = tableau[0].size() - 1;
+   size_t ligneFin = tableau.size() - 1;
+   size_t colonneFin = tableau[0].size() - 1;
 
    // Calcule le nombre d'occurences dans le cas où la cellule se trouve dans un
    // des bords de la grille puis (dans le else) dans le cas où la cellule se

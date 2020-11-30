@@ -37,17 +37,29 @@ const char CELLULE_VIDE = '.';
 const int ESPACE_COLONNES = 3;
 
 int main() {
-   Grille grille1({});
-   grille1.at(0) = {0,0,0,0,0,0,0,0,0,0, 0};
-   grille1.at(1) = {0,0,0,0,0,0,0,0,0,0, 0};
-   grille1.at(2) = {0,0,0,0,0,0,0,0,0,0, 0};
-   grille1.at(3) = {0,0,0,0,0,0,0,0,0,0, 0};
-   grille1.at(4) = {0,0,0,0,0,0,0,0,0,0, 0};
-   grille1.at(5) = {0,0,0,0,0,0,0,0,0,0, 0};
-   grille1.at(6) = {0,0,0,0,0,0,0,0,0,0, 0};
-   grille1.at(7) = {0,0,0,0,0,0,0,0,0,0, 0};
-   grille1.at(8) = {1,1,1,0,0,0,0,0,0,0, 0};
-   grille1.at(9) = {0,1,0,0,0,0,0,0,0,0, 0};
+   Grille grille1(10,vector<bool>(11));
+   grille1.at(0) = {0,0,0,0,0,0,0,0,0,0,0};
+   grille1.at(1) = {0,0,0,0,0,0,0,0,0,0,0};
+   grille1.at(2) = {0,0,0,0,0,0,0,0,0,0,0};
+   grille1.at(3) = {0,0,0,0,0,0,0,0,0,0,0};
+   grille1.at(4) = {0,0,0,0,0,0,0,0,0,0,0};
+   grille1.at(5) = {0,0,0,0,0,0,0,0,0,0,0};
+   grille1.at(6) = {0,0,0,0,0,0,0,0,0,0,0};
+   grille1.at(7) = {0,0,0,0,0,0,0,0,0,0,0};
+   grille1.at(8) = {1,1,1,0,0,0,0,0,0,0,0};
+   grille1.at(9) = {0,1,0,0,0,0,0,0,0,0,0};
+
+//   Grille grille2(12,vector<bool>(11));
+//   grille2.at(0) = {0,0,0,0,0,0,0,0,1,1,1};
+//   grille2.at(1) = {0,0,0,0,0,0,0,0,0,1,0};
+//   grille2.at(2) = {0,0,0,0,0,0,0,0,0,0,0};
+//   grille2.at(3) = {0,0,0,0,0,0,0,0,0,0,0};
+//   grille2.at(4) = {0,0,0,0,0,0,0,0,0,0,0};
+//   grille2.at(5) = {0,0,0,0,0,0,0,0,0,0,0};
+//   grille2.at(6) = {0,0,0,0,0,0,0,0,0,0,0};
+//   grille2.at(7) = {0,0,0,0,0,0,0,0,0,0,0};
+//   grille2.at(8) = {1,1,1,0,0,0,0,0,0,0,0};
+//   grille2.at(9) = {0,1,0,0,0,0,0,0,0,0,0};
 
 //   // Configuration initiale
 //   grille1.at(4).at(4) = true;
@@ -56,6 +68,7 @@ int main() {
 //   grille1.at(5).at(5) = true;
 
    commencerJeuDeLaVie(grille1, 14);
+   //commencerJeuDeLaVie(grille2, 14);
 
    return EXIT_SUCCESS;
 }
