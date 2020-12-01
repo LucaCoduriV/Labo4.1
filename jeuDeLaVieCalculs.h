@@ -8,8 +8,10 @@ Description     : Ce module contient les fonctions nécessaires aux calculs
                   de la prochaine génération. Ces fonctions sont implémentées dans
                   le fichier jeuDeLaVieCalculs.cpp.
 
-Remarque(s)     : Une grille de type Grille est un tableau de type array de 2
-                  dimensions.
+Remarque(s)     : Une grille de type Grille est un tableau de type vector de 2
+                  dimensions contenant des booléens. Ce type a été choisi car il
+                  peut être passé en paramètre de condition et être utilisé comme
+                  tel lors du calcul du nombre d'occurrences.
 
 Compilateur     : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
@@ -38,7 +40,7 @@ bool etatCelluleGenSuivante(bool etatActuel, unsigned nbOccurrences);
  * Modifie l'état de chaque cellule pour la génération suivante
  *
  * @param genActu : grille de booléens représentant la génération actuelle
- * @return une gille de booléens représentant la génération suivante
+ * @return une grille de booléens représentant la génération suivante
  */
 Grille calculeGenSuivante(const Grille &genActu);
 
@@ -46,7 +48,7 @@ Grille calculeGenSuivante(const Grille &genActu);
  * Calcule le nombres de cellules voisines occupées de la cellule entrée en
  * paramètre
  *
- * @param grille : grille de booléens
+ * @param grille : grille de booléens représentant la génération actuelle
  * @param ligne : ligne de l'emplacement de la cellule
  * @param colonne : colonne de l'emplacement de la cellule
  * @return le nombre de cellules voisines occupées

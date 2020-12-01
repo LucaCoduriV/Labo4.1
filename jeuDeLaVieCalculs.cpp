@@ -7,7 +7,10 @@ Date creation  : 27.11.2020
 Description    : Ce fichier contient l'implémentation des prototypes des fonctions
                  déclarés dans le fichier jeuDeLaVieCalculs.h.
 
-Remarque(s)    :
+Remarque(s)    : Dans la fonction qui calcule le nombre de cellules voisines
+                 occuppées, nous avons décidé de déclarer une variable occ afin de
+                 la retourner en la castant en unsigned, puisque les booléens sont
+                 convertis en int lorsque nous les additionnons.
 
 Compilateur    : Mingw-w64 g++ 8.1.0
  -----------------------------------------------------------------------------------

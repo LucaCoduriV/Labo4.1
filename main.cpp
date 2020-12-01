@@ -21,6 +21,8 @@ Remarque(s)    : Le programme s'éteint après avoir affiché le nombre choisi d
                  cellule occupée peut être modifié.
                  Une grille de type Grille est un tableau de type vector de 2
                  dimensions.
+                 La taille maximale de cette grille correspond à la taille
+                 maximale d'un vector.
 
 Compilateur    : Mingw-w64 g++ 8.1.0
  -----------------------------------------------------------------------------------
@@ -30,8 +32,8 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 
 using namespace std;
 
-const char CELLULE_OCCUPEE = 'X';
-const char CELLULE_VIDE = '.';
+const char SYMBOLE_OCCUPEE = 'X';
+const char SYMBOLE_VIDE = '.';
 const int ESPACE_COLONNES = 3;
 const size_t COLONNES = 11;
 const size_t LIGNES = 10;

@@ -7,7 +7,7 @@ Date creation  : 27.11.2020
 Description    : Ce fichier contient l'implémentation des prototypes des fonctions
                  déclarés dans le fichier jeuDeLaVieGestionErreurs.h.
 
-Remarque(s)    :
+Remarque(s)    : -
 
 Compilateur    : Mingw-w64 g++ 8.1.0
  -----------------------------------------------------------------------------------
