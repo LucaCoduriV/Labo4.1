@@ -19,6 +19,7 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 
 #ifndef LABO4_1_JEUDELAVIEAFFICHAGE_H
 #define LABO4_1_JEUDELAVIEAFFICHAGE_H
+
 #include "jeuDeLaVieCalculs.h"
 
 extern const char SYMBOLE_OCCUPEE;

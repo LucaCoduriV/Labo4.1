@@ -18,9 +18,11 @@ Description    : Ce programme implémente le jeu de la vie, inventé par J. H. C
 Remarque(s)    : Le programme s'éteint après avoir affiché le nombre choisi de
                  générations. Aucune saisie utilisateur/trice n'est requise.
                  Le choix des caractères représentant une cellule vide et une
-                 cellule occupée peut être modifié.
+                 cellule occupée peut être modifié. Les dimensions de la grille,
+                 le nombre de générations à afficher et les espacements entre
+                 colonnes peuvent également être choisis.
                  Une grille de type Grille est un tableau de type vector de 2
-                 dimensions.
+                 dimensions de booléens.
                  La taille maximale de cette grille correspond à la taille
                  maximale d'un vector.
 
@@ -37,7 +39,7 @@ const char SYMBOLE_VIDE = '.';
 const int ESPACE_COLONNES = 3;
 const size_t COLONNES = 11;
 const size_t LIGNES = 10;
-const unsigned NB_GENERATION = 20;
+const unsigned NB_GENERATIONS = 20;
 
 int main() {
    Grille genBase(LIGNES, Ligne(COLONNES));
@@ -47,7 +49,7 @@ int main() {
    genBase.at(4).at(6) = true;
    genBase.at(5).at(5) = true;
 
-   commencerJeuDeLaVie(genBase, NB_GENERATION);
+   commencerJeuDeLaVie(genBase, NB_GENERATIONS);
 
    return EXIT_SUCCESS;
 }

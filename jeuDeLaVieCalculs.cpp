@@ -38,7 +38,6 @@ Grille calculeGenSuivante(const Grille &genActu) {
          if (etatCelluleGenSuivante(genActu.at(i).at(j),
                                     nbCellulesVoisinesOccupees(genActu, i, j))) {
             genSuiv.at(i).at(j) = true;
-
          } else {
             genSuiv.at(i).at(j) = false;
          }
@@ -54,7 +53,7 @@ colonne) {
    size_t colonneFin = grille.at(0).size() - 1;
 
    // Calcule le nombre d'occurrences dans le cas où la cellule se trouve dans un
-   // des bords de la grille puis (dans le else) dans le cas où la cellule se
+   // des bords de la grille, puis (dans le else) dans le cas où la cellule se
    // trouve dans le centre de la grille
    int occ;
    if (ligne == 0) {
