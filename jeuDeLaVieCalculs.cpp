@@ -29,7 +29,7 @@ bool etatCelluleGenSuivante(bool etatActuel, unsigned nbOccurrences) {
           (etatActuel && (nbOccurrences == 3 || nbOccurrences == 2));
 }
 
-Grille calculeGenSuivante(const Grille &genActu) {
+Grille calculeGenSuivante(const Grille& genActu) {
    assert(verifierTailleGrille(genActu.size(), genActu.at(0).size()));
    Grille genSuiv(genActu.size(), Ligne(genActu.at(0).size()));
 
@@ -46,7 +46,7 @@ Grille calculeGenSuivante(const Grille &genActu) {
    return genSuiv;
 }
 
-unsigned nbCellulesVoisinesOccupees(const Grille &grille, size_t ligne, size_t
+unsigned nbCellulesVoisinesOccupees(const Grille& grille, size_t ligne, size_t
 colonne) {
    assert(verifierTailleGrille(grille.size(), grille.at(0).size()));
    size_t ligneFin = grille.size() - 1;

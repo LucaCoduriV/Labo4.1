@@ -42,7 +42,7 @@ bool etatCelluleGenSuivante(bool etatActuel, unsigned nbOccurrences);
  * @param genActu : grille de booléens représentant la génération actuelle
  * @return une grille de booléens représentant la génération suivante
  */
-Grille calculeGenSuivante(const Grille &genActu);
+Grille calculeGenSuivante(const Grille& genActu);
 
 /**
  * Calcule le nombres de cellules voisines occupées de la cellule entrée en
@@ -53,7 +53,7 @@ Grille calculeGenSuivante(const Grille &genActu);
  * @param colonne : colonne de l'emplacement de la cellule
  * @return le nombre de cellules voisines occupées
  */
-unsigned nbCellulesVoisinesOccupees(const Grille &grille, size_t ligne,
+unsigned nbCellulesVoisinesOccupees(const Grille& grille, size_t ligne,
                                     size_t colonne);
 
 #endif
