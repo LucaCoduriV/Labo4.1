@@ -5,7 +5,7 @@ Auteur(s)      : Chloé Fontaine & Tania Nunez & Luca Coduri
 Date creation  : 27.11.2020
 
 Description    : Ce fichier contient l'implémentation des prototypes des fonctions
-                 déclarées dans le fichier jeuDeLaVieCalculs.h.
+                 déclarés dans le fichier jeuDeLaVieCalculs.h.
 
 Remarque(s)    :
 

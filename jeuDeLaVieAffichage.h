@@ -4,7 +4,7 @@ Nom du fichier : jeuDeLaVieAffichage.h
 Auteur(s)      : Chloé Fontaine & Tania Nunez & Luca Coduri
 Date creation  : 27.11.2020
 
-Description    : Ce fichier contient les fonctions gérant le point de départ du
+Description    : Ce module contient les fonctions gérant le point de départ du
                  jeu de la vie et l'affichage des configurations des générations
                  (grilles). Ces fonctions sont implémentées dans le fichier
                  jeuDeLaVieAffichage.cpp.
