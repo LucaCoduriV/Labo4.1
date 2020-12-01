@@ -19,7 +19,7 @@ Remarque(s)    : Le programme s'éteint après avoir affiché le nombre choisi d
                  générations. Aucune saisie utilisateur/trice n'est requise.
                  Le choix des caractères représentant une cellule vide et une
                  cellule occupée peut être modifié.
-                 Une grille de type Grille est un tableau de type array de 2
+                 Une grille de type Grille est un tableau de type vector de 2
                  dimensions.
 
 Compilateur    : Mingw-w64 g++ 8.1.0
