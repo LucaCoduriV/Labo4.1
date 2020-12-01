@@ -20,6 +20,6 @@ bool verifierEspacesColonnes(int espaceColonnes) {
    return espaceColonnes >= 0;
 }
 
-bool verifierTailleGrille(size_t colonnes, size_t lignes){
+bool verifierTailleGrille(size_t colonnes, size_t lignes) {
    return colonnes >= 1 && lignes >= 1;
 }

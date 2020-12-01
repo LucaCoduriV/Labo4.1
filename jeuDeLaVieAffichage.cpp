@@ -22,7 +22,7 @@ Compilateur    : Mingw-w64 g++ 8.1.0
 
 using namespace std;
 
-void commencerJeuDeLaVie(Grille grilleBase, unsigned nbGeneration){
+void commencerJeuDeLaVie(Grille grilleBase, unsigned nbGeneration) {
    for (unsigned i = 0; i < nbGeneration; ++i) {
       cout << endl << "Generation " << i + 1 << " :" << endl;
       afficherUneGeneration(grilleBase, SYMBOLE_OCCUPEE, SYMBOLE_VIDE);
@@ -31,10 +31,10 @@ void commencerJeuDeLaVie(Grille grilleBase, unsigned nbGeneration){
 }
 
 void afficherUneGeneration(const Grille& grille, char symboleOccupee, char
-symboleVide){
+symboleVide) {
    assert(verifierEspacesColonnes(ESPACE_COLONNES));
-   for (const Ligne& ligne : grille) {
-      for (const bool& col : ligne) {
+   for (const Ligne &ligne : grille) {
+      for (const bool &col : ligne) {
          if (col)
             cout << setw(ESPACE_COLONNES) << symboleOccupee;
          else
