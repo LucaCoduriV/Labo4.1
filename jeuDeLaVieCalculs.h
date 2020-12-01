@@ -17,6 +17,7 @@ Compilateur     : Mingw-w64 g++ 8.1.0
 
 #ifndef LABO4_JEUDELAVIE_H
 #define LABO4_JEUDELAVIE_H
+
 #include <vector>
 
 using Ligne = std::vector<bool>;
@@ -27,11 +28,11 @@ using Grille = std::vector<Ligne>;
  * actuel de ses cellules voisines
  *
  * @param etatActuel : true si la cellule est actuellement occupée, 0 autrement
- * @param nbOccurences : nombre de cellules voisines occupées
+ * @param nbOccurrences : nombre de cellules voisines occupées
  * @return un booléen : true si la cellule sera vivante durant la prochaine
  * génération, false autrement
  */
-bool etatCelluleGenSuivante(bool etatActuel, unsigned nbOccurences);
+bool etatCelluleGenSuivante(bool etatActuel, unsigned nbOccurrences);
 
 /**
  * Modifie l'état de chaque cellule pour la génération suivante
@@ -39,7 +40,7 @@ bool etatCelluleGenSuivante(bool etatActuel, unsigned nbOccurences);
  * @param genActu : grille de booléens représentant la génération actuelle
  * @return une gille de booléens représentant la génération suivante
  */
-Grille calculeGenSuivante(const Grille& genActu);
+Grille calculeGenSuivante(const Grille &genActu);
 
 /**
  * Calcule le nombres de cellules voisines occupées de la cellule entrée en
@@ -50,6 +51,7 @@ Grille calculeGenSuivante(const Grille& genActu);
  * @param colonne : colonne de l'emplacement de la cellule
  * @return le nombre de cellules voisines occupées
  */
-unsigned nbCellulesVoisinesOccupees(const Grille &grille, size_t ligne, size_t colonne);
+unsigned nbCellulesVoisinesOccupees(const Grille &grille, size_t ligne,
+                                    size_t colonne);
 
 #endif //LABO4_JEUDELAVIE_H
