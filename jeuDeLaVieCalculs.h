@@ -54,4 +54,4 @@ Grille calculeGenSuivante(const Grille &genActu);
 unsigned nbCellulesVoisinesOccupees(const Grille &grille, size_t ligne,
                                     size_t colonne);
 
-#endif //LABO4_JEUDELAVIE_H
+#endif
